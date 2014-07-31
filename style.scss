@@ -1,0 +1,12 @@
+.roboForm{}
+input.roboForm_error{
+	color:red;
+	border:1px solid red;
+}
+div.roboForm_error{
+	color:red;
+	display:none;
+}
+div.roboForm_show{
+	display:block;
+}

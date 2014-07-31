@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script type="text/javascript" src="jquery.roboForm.js"></script>
+	<link rel="stylesheet" href="style.css"/>
+
+	<script type="text/javascript">
+		$(function(){
+
+			$('.roboForm').roboForm()
+
+		})
+	</script>
+</head>
+<body>
+
+<form data-ajax="1" class="roboForm" action="test.php" method="post">
+	<label>Почта</label><br/>
+	<input data-roborules="email required" class="roboForm_field" type="email" name="email" />
+	<div class="roboForm_error"></div>
+	<br /><br/>
+
+	<label>Телефон</label><br/>
+	<input data-roborules="phone" class="roboForm_field" type="tel" name=""/>
+	<br /><br/>
+
+	<label>Не пустое поле</label><br/>
+	<input data-roborules="required" data-robomessage="Поле не может быть пустым" class="roboForm_field" type="text" name=""/>
+	<br /><br/>
+
+	<label>Соотвествует рег. паттерну</label><br/>
+	<input data-roborules="pattern" data-robopattern="^test_" class="roboForm_field" type="text" name=""/>
+	<div class="roboForm_error"></div>
+	<br/><br/>
+
+	<input class="roboForm_send" type="submit" value="SEND"/>
+</form>
+
+</body>
+</html>
