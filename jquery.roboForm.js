@@ -1,7 +1,7 @@
 /**
- * jQuery.formRobot v0.1
+ * jQuery.roboForm v0.1
  * @desc: Автоматизатор форм. Проверка валидности и связь с сервером
- * Сайт плагина - https://github.com/StepanMas/jQuery.formRobot
+ * Сайт плагина - https://github.com/StepanMas/jQuery.roboForm
  */
 
 ;(function($){
