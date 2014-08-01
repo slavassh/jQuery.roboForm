@@ -31,6 +31,16 @@
 	<input data-roborules="required" data-robomessage="Поле не может быть пустым" class="roboForm_field" type="text" name=""/>
 	<br /><br/>
 
+	<label>Только целое число</label><br/>
+	<input data-roborules="integer" class="roboForm_field" type="text" name=""/>
+	<div class="roboForm_error"></div>
+	<br/><br/>
+
+	<label>Только целое число или дробное</label><br/>
+	<input data-roborules="float" class="roboForm_field" type="text" name=""/>
+	<div class="roboForm_error"></div>
+	<br/><br/>
+
 	<label>Соотвествует рег. паттерну</label><br/>
 	<input data-roborules="pattern" data-robopattern="^test_" class="roboForm_field" type="text" name=""/>
 	<div class="roboForm_error"></div>

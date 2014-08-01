@@ -19,6 +19,8 @@
 			mess_noEmail: 'Укажите почту правильно',
 			mess_noPhone: 'Укажите номер правильно',
 			mess_noPattern: 'Заполните поле правильно',
+			mess_noInteger: 'Можно вводить только целое число',
+			mess_noFloat: 'Можно вводить только целое число или число с плавающей точкой',
 
 			// system
 			isNotification: true,
@@ -75,6 +77,20 @@
 
 						if (!/^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/.test(value))
 							isValid = exceptionError(_this, cnf.mess_noPhone)
+
+					}
+
+					else if (hasRules('integer', rules) && (hasRules('required', rules) || value !== '')) {
+
+						if (!/^\d+$/.test(value))
+							isValid = exceptionError(_this, cnf.mess_noInteger)
+
+					}
+
+					else if (hasRules('float', rules) && (hasRules('required', rules) || value !== '')) {
+
+						if (!/^(\d|\.)+$/.test(value))
+							isValid = exceptionError(_this, cnf.mess_noFloat)
 
 					}
 

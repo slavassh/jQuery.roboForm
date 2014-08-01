@@ -15,6 +15,8 @@ jQuery.roboForm
 	email - проверить поле на правильный e-mail
 	required - поле обязательно к заполнению и не может быть пустым
 	phone - проверяем телефон
+	integer - только целые числа
+	float - только числа
 	
 	pattern - соотвествует ли рег. выражению
 	<input data-roborules="pattern required" data-robopattern="^test_" class="roboForm_field" type="text" value="test_"/> // true
