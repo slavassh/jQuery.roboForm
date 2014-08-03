@@ -1,5 +1,5 @@
 /**
- * jQuery.roboForm v0.1
+ * jQuery.roboForm v0.2
  * @desc: Автоматизатор форм. Проверка валидности и связь с сервером
  * Сайт плагина - https://github.com/StepanMas/jQuery.roboForm
  */
@@ -195,7 +195,7 @@
 
 			hasRules = function(rules, source){
 
-				if(source.indexOf(rules) !== -1)
+				if(source !== undefined && source.indexOf(rules) !== -1)
 					return true;
 
 				else
