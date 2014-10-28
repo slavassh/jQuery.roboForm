@@ -116,11 +116,16 @@
 						url: $(this).attr('action'),
 						success: function(res){
 
+							try{
+								res = $.parseJSON(res)
+							}catch (e) {
+								console.log(e)
+							}
+
 							if(cnf.isNotification)
 							{
 								try {
 
-									res = $.parseJSON(res)
 									if (res.success) {
 
 										if (cnf.isMyNoty) $.miniNoty(res.success, 'success')
@@ -139,6 +144,11 @@
 									console.error(e, 'jQuery.roboForm expects an JSON array')
 								}
 							}
+
+							form.trigger({
+								type: 'roboForm.ajax.success',
+								response: res
+							})
 
 						},
 						error: function(e){

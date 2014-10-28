@@ -39,6 +39,7 @@ jQuery.roboForm
 	isNotificationAjaxError: false, // показываь ошибки при режиме ajax
 	isMyNoty: $.isFunction($.miniNoty) // расширение, плагин уведомлений
 
+Если выбран режим ajax, то по завершению запроса вызывается событие roboForm.ajax.success. Аргумент res.response содержит ответ от сервера.
 
 
 Лицензия
