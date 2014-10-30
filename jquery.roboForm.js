@@ -1,5 +1,5 @@
 /**
- * jQuery.roboForm v0.4
+ * jQuery.roboForm v0.5
  * @desc: Автоматизатор форм. Проверка валидности и связь с сервером
  * Сайт плагина - https://github.com/StepanMas/jQuery.roboForm
  */
