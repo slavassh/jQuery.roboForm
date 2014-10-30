@@ -169,6 +169,10 @@
 				}
 			})
 
+			form.on('click', _prop.errorElement, function(){
+				$(this).removeClass(_prop.errorVisible.replace('.', ''))
+			})
+
 		})
 
 
