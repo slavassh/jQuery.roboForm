@@ -3,14 +3,15 @@ jQuery.roboForm
 
 Автоматизатор форм. Проверка валидности и связь с сервером
 
-	$('.roboForm').roboForm()
+	$.roboForm()
 	
 Примеры:
 
+	form.roboForm = форма для валидации
 	data-roborules = Правила валидации
 	data-robomessage = Приоритетный текст ошибки
 
-	<input data-roborules="email required" class="roboForm_field" type="email" name="email" />
+	<input data-roborules="email required" type="email" name="email" />
 	
 	email - проверить поле на правильный e-mail
 	required - поле обязательно к заполнению и не может быть пустым
@@ -19,12 +20,12 @@ jQuery.roboForm
 	float - только числа
 	
 	pattern - соотвествует ли рег. выражению
-	<input data-roborules="pattern required" data-robopattern="^test_" class="roboForm_field" type="text" value="test_"/> // true
+	<input data-roborules="pattern required" data-robopattern="^test_" type="text" value="test_"/> // true
 
 Параметры:
 
 	// классы
-	field: '.roboForm_field', // поле для валидации
+	field: ':input[data-roborules]', // поле для валидации
 	errorElement: '.roboForm_error', // элемент сразу после поля куда записывается текст ошибки
 	errorVisible: '.roboForm_show', // класс для показа ошибки
 

@@ -1,4 +1,4 @@
-input.roboForm_error {
+input.roboForm_error, textarea.roboForm_error {
   color: red;
   border: 1px solid red; }
 
@@ -8,3 +8,5 @@ div.roboForm_error {
 
 div.roboForm_show {
   display: block; }
+
+/*# sourceMappingURL=style.css.map */
