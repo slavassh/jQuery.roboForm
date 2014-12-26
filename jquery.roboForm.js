@@ -176,8 +176,12 @@
 
 		})
 
-		body.on('click', _prop.errorElement, function () {
+		body.on('click', cnf.errorElement, function () {
 			$(this).removeClass(_prop.errorVisible.replace('.', ''))
+		})
+
+		body.on('focus', cnf.field, function () {
+			$(this).next().removeClass('roboForm_show')
 		})
 
 		// функций
