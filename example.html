@@ -12,11 +12,18 @@
 
 			$.roboForm()
 
+			$('.roboForm')
+					.on('roboForm.valid.false', function(){
+						$('.status').html('Not valid')
+					})
+					.on('roboForm.valid.true', function () {
+						$('.status').html('Valid!')
+					})
 		})
 	</script>
 </head>
 <body>
-
+<div class="status"></div>
 <form class="roboForm" action="test.php" method="post">
 	<label>Почта</label><br/>
 	<input data-roborules="email required" type="email" name="email" />

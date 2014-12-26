@@ -7,7 +7,7 @@ jQuery.roboForm
 	
 Примеры:
 
-	form.roboForm = форма для валидации
+	.roboForm = форма для валидации
 	data-roborules = Правила валидации
 	data-robomessage = Приоритетный текст ошибки
 
@@ -40,7 +40,11 @@ jQuery.roboForm
 	isNotificationAjaxError: false, // показываь ошибки при режиме ajax
 	isMyNoty: $.isFunction($.miniNoty) // расширение, плагин уведомлений
 
-Если выбран режим ajax, то по завершению запроса вызывается событие roboForm.ajax.success. Аргумент res.response содержит ответ от сервера.
+События, вызываются для .roboForm:
+
+	roboForm.ajax.success - Если выбран режим ajax, то вызывается это событие. Аргумент res.response содержит ответ от сервера.
+	roboForm.valid.true - форма валидна
+	roboForm.valid.false - форма не валидна
 
 
 Лицензия

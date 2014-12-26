@@ -101,7 +101,20 @@
 
 			})
 
-			if (!isValid) return false;
+			if (!isValid) {
+
+				form.trigger({
+					type: 'roboForm.valid.false'
+				})
+
+				return false;
+			}
+			else
+			{
+				form.trigger({
+					type: 'roboForm.valid.true'
+				})
+			}
 
 			if ($(this).data('ajax')) {
 
