@@ -1,5 +1,5 @@
 /**
- * jQuery.roboForm v0.5.1
+ * jQuery.roboForm v0.52.2
  * @desc: Автоматизатор форм. Проверка валидности и связь с сервером
  * Сайт плагина - https://github.com/StepanMas/jQuery.roboForm
  */
@@ -186,6 +186,9 @@
 
 		// функций
 		var exceptionError = function(field, message){
+
+				$('input[type="submit"], .createEvent[data-event="submit"]')
+					.removeClass('loader')
 
 				if(field.data('robomessage'))
 					message = field.data('robomessage')
