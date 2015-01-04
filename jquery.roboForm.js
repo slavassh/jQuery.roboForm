@@ -28,7 +28,7 @@
 				isNotificationAjaxError: false,
 				isMyNoty: $.isFunction($.miniNoty)
 			},
-			body = $('body')
+			doc = $(document)
 
 
 		// classes
@@ -37,7 +37,7 @@
 
 		var cnf = $.extend(_prop, cnf)
 
-		body.on('submit', cnf.formCls, function() {
+		doc.on('submit', cnf.formCls, function() {
 
 			var form = $(this),
 				isValid = true
@@ -176,11 +176,11 @@
 
 		})
 
-		body.on('click', cnf.errorElement, function () {
+		doc.on('click', cnf.errorElement, function () {
 			$(this).removeClass(_prop.errorVisible.replace('.', ''))
 		})
 
-		body.on('focus', cnf.field, function () {
+		doc.on('focus', cnf.field, function () {
 			$(this).next().removeClass('roboForm_show')
 		})
 
