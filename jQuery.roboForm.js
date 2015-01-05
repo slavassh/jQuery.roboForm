@@ -1,8 +1,11 @@
 /**
- * jQuery.roboForm v0.52.2
- * @desc: Автоматизатор форм. Проверка валидности и связь с сервером
- * Сайт плагина - https://github.com/StepanMas/jQuery.roboForm
- */
+ * Application:  jQuery.roboForm
+ * Version:      1.0.0
+ * Release date: 2015-01-05
+ * Author:       Stepan Maslennikov (http://csscode.ru)
+ * Homepage:     https://github.com/StepanMas/jQuery.roboForm
+ * License:      MIT
+*/
 
 ;(function($){
 
