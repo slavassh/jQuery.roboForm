@@ -1,7 +1,7 @@
 /**
  * Application:  jQuery.roboForm
- * Version:      1.0.0
- * Release date: 2015-01-05
+ * Version:      1.0.1
+ * Release date: 2015-01-09
  * Author:       Stepan Maslennikov (http://csscode.ru)
  * Homepage:     https://github.com/StepanMas/jQuery.roboForm
  * License:      MIT
@@ -180,11 +180,11 @@
 		})
 
 		doc.on('click', cnf.errorElement, function () {
-			$(this).removeClass(_prop.errorVisible.replace('.', ''))
+			$(this).removeClass(_prop.errorVisibleClass)
 		})
 
 		doc.on('focus', cnf.field, function () {
-			$(this).next().removeClass('roboForm_show')
+			$(this).removeClass(_prop.errorElementClass).next().removeClass(_prop.errorVisibleClass)
 		})
 
 		// функций
