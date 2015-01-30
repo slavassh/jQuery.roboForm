@@ -1,4 +1,4 @@
-input.roboForm_error, textarea.roboForm_error {
+.roboForm_error:not(div) {
   color: red;
   border: 1px solid red; }
 
