@@ -25,35 +25,45 @@
 <body>
 <div class="status"></div>
 <form class="roboForm" action="test.php" method="post">
-	<label>Почта</label><br/>
+	<label>E-mail</label><br/>
 	<input data-roborules="email required" type="email" name="email" />
 	<div class="roboForm_error"></div>
 	<br /><br/>
 
-	<label>Телефон</label><br/>
+	<label>Phone</label><br/>
 	<input data-roborules="phone" type="tel" name=""/>
 	<br /><br/>
 
-	<label>Не пустое поле</label><br/>
+	<label>Not empty</label><br/>
 	<input data-roborules="required" data-robomessage="Поле не может быть пустым" type="text" name=""/>
 	<br /><br/>
 
-	<label>Только целое число</label><br/>
+	<label>Integer only</label><br/>
 	<input data-roborules="integer" type="text" name=""/>
 	<div class="roboForm_error"></div>
 	<br/><br/>
 
-	<label>Только целое число или дробное</label><br/>
+	<label>Integer only and float</label><br/>
 	<input data-roborules="float" type="text" name=""/>
 	<div class="roboForm_error"></div>
 	<br/><br/>
 
-	<label>Соотвествует рег. паттерну</label><br/>
+	<label>Cyrillic only</label><br/>
+	<input data-roborules="cyrillic required" type="text" name=""/>
+	<div class="roboForm_error"></div>
+	<br/><br/>
+
+	<label>Symbol range</label><br/>
+	<input data-roborules="range required" data-range="5" type="text" name=""/>
+	<div class="roboForm_error"></div>
+	<br/><br/>
+
+	<label>Match RegExp</label><br/>
 	<input data-roborules="pattern" data-robopattern="^test_" type="text" name=""/>
 	<div class="roboForm_error"></div>
 	<br/><br/>
 
-	<label>Не пустое поле</label><br/>
+	<label>Not empty</label><br/>
 	<textarea data-roborules="required" name="" cols="30" rows="2"></textarea>
 	<div class="roboForm_error"></div>
 	<br/><br/>

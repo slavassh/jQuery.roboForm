@@ -10,6 +10,7 @@ jQuery.roboForm
 	.roboForm = форма для валидации
 	data-roborules = Правила валидации
 	data-robomessage = Приоритетный текст ошибки
+	data-range = диапазон символов через тире, напр. 5-6 или точное число
 
 	<input data-roborules="email required" type="email" name="email" />
 	
@@ -18,6 +19,8 @@ jQuery.roboForm
 	phone - проверяем телефон
 	integer - только целые числа
 	float - только числа
+	cyrillic - только киррилица
+	range - диапазон или точное количество символов
 	
 	pattern - соотвествует ли рег. выражению
 	<input data-roborules="pattern required" data-robopattern="^test_" type="text" value="test_"/> // true
@@ -34,6 +37,10 @@ jQuery.roboForm
 	mess_noEmail: 'Укажите почту правильно', // не верно указана почта
 	mess_noPhone: 'Укажите номер правильно', // телефон
 	mess_noPattern: 'Заполните поле правильно', // не соотвествует ругулярному выражению
+	mess_noInteger: 'Можно вводить только целое число',
+    mess_noFloat: 'Можно вводить только целое число или число с плавающей точкой',
+    mess_noCyrillic: 'Допускаются только символы кириллицы, цифры и символы -_.,?!',
+    mess_range: 'Укажите $1 цифр',
 
 	// system
 	isNotification: true, // показывать уведомления при режиме ajax

@@ -1,6 +1,6 @@
 /**
  * Application:  jQuery.roboForm
- * Version:      1.0.3
+ * Version:      1.0.4
  * Release date: 2015-02-06
  * Author:       Stepan Maslennikov (http://csscode.ru)
  * Homepage:     https://github.com/StepanMas/jQuery.roboForm
@@ -25,6 +25,8 @@
 				mess_noPattern: 'Заполните поле правильно',
 				mess_noInteger: 'Можно вводить только целое число',
 				mess_noFloat: 'Можно вводить только целое число или число с плавающей точкой',
+				mess_noCyrillic: 'Допускаются только символы кириллицы, цифры и символы -_.,?!',
+				mess_range: 'Укажите $1 цифр',
 
 				// system
 				isNotification: true,
@@ -90,6 +92,34 @@
 
 					if (!/^(\d|\.)+$/.test(value))
 						isValid = exceptionError(_this, cnf.mess_noFloat)
+
+				}
+
+				else if (hasRules('cyrillic', rules) && (hasRules('required', rules) || value !== '')) {
+
+					if (!/^[а-яё\d\s-_.,\?!]+$/i.test(value))
+						isValid = exceptionError(_this, cnf.mess_noCyrillic)
+
+				}
+
+				else if (hasRules('range', rules) && (hasRules('required', rules) || value !== '')) {
+
+					var range = _this.data('range').toString();
+
+					if(range.indexOf('-') !== -1){
+
+						range = range.split('-')
+
+						if(value.length < parseInt(range[0]) || value.length > parseInt(range[1]))
+							isValid = exceptionError(_this, cnf.mess_range.replace('$1', _this.data('range')))
+
+					}
+					else{
+
+						if(value.length !== parseInt(range))
+							isValid = exceptionError(_this, cnf.mess_range.replace('$1', _this.data('range')))
+
+					}
 
 				}
 
