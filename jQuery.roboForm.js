@@ -1,7 +1,7 @@
 /**
  * Application:  jQuery.roboForm
- * Version:      1.0.4
- * Release date: 2015-02-06
+ * Version:      1.1.0
+ * Release date: 2015-02-07
  * Author:       Stepan Maslennikov (http://csscode.ru)
  * Homepage:     https://github.com/StepanMas/jQuery.roboForm
  * License:      MIT
@@ -66,7 +66,7 @@
 				if (hasRules('required', rules) && value === '')
 					isValid = exceptionError(_this, cnf.mess_noRequired)
 
-				else if (hasRules('email', rules) && (hasRules('required', rules) || value !== '')) {
+				if (hasRules('email', rules) && (hasRules('required', rules) || value !== '')) {
 
 					var regexp = /^([a-z0-9_\-]+\.)*[a-z0-9_\-]+@([a-z0-9][a-z0-9\-]*[a-z0-9]\.)+[a-z]{2,4}$/i;
 
@@ -74,35 +74,35 @@
 
 				}
 
-				else if (hasRules('phone', rules) && (hasRules('required', rules) || value !== '')) {
+				if (hasRules('phone', rules) && (hasRules('required', rules) || value !== '')) {
 
 					if (!/^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/.test(value))
 						isValid = exceptionError(_this, cnf.mess_noPhone)
 
 				}
 
-				else if (hasRules('integer', rules) && (hasRules('required', rules) || value !== '')) {
+				if (hasRules('integer', rules) && (hasRules('required', rules) || value !== '')) {
 
 					if (!/^\d+$/.test(value))
 						isValid = exceptionError(_this, cnf.mess_noInteger)
 
 				}
 
-				else if (hasRules('float', rules) && (hasRules('required', rules) || value !== '')) {
+				if (hasRules('float', rules) && (hasRules('required', rules) || value !== '')) {
 
 					if (!/^(\d|\.)+$/.test(value))
 						isValid = exceptionError(_this, cnf.mess_noFloat)
 
 				}
 
-				else if (hasRules('cyrillic', rules) && (hasRules('required', rules) || value !== '')) {
+				if (hasRules('cyrillic', rules) && (hasRules('required', rules) || value !== '')) {
 
 					if (!/^[а-яё\d\s-_.,\?!]+$/i.test(value))
 						isValid = exceptionError(_this, cnf.mess_noCyrillic)
 
 				}
 
-				else if (hasRules('range', rules) && (hasRules('required', rules) || value !== '')) {
+				if (hasRules('range', rules) && (hasRules('required', rules) || value !== '')) {
 
 					var range = _this.data('range').toString();
 
@@ -123,7 +123,7 @@
 
 				}
 
-				else if (hasRules('pattern', rules) && (hasRules('required', rules) || value !== '')) {
+				if (hasRules('pattern', rules) && (hasRules('required', rules) || value !== '')) {
 
 					var regexp = new RegExp(_this.data('robopattern'));
 
