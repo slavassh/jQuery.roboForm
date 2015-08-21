@@ -1,7 +1,7 @@
 /**
  * Application:  jQuery.roboForm
- * Version:      1.1.0
- * Release date: 2015-02-07
+ * Version:      1.1.1
+ * Release date: 2015-08-21
  * Author:       Stepan Maslennikov (http://csscode.ru)
  * Homepage:     https://github.com/StepanMas/jQuery.roboForm
  * License:      MIT
@@ -14,7 +14,7 @@
 		var _prop = {
 				formCls: '.roboForm',
 
-				field: ':input[data-roborules]',
+				field: ':input[data-roborules]:visible',
 				errorElement: '.roboForm_error',
 				errorVisible: '.roboForm_show',
 
