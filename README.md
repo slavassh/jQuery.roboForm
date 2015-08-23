@@ -52,6 +52,13 @@ jQuery.roboForm
 	roboForm.ajax.success - Если выбран режим ajax, то вызывается это событие. Аргумент res.response содержит ответ от сервера.
 	roboForm.valid.true - форма валидна
 	roboForm.valid.false - форма не валидна
+	
+Methods:
+
+	// Add rule for check of validate for form(tag form) and cnf is current config of roboForm
+	$.roboFormAddRule(function(form, cnf){
+		return true // false if not valid that to prevent submit of event
+	})
 
 
 Лицензия

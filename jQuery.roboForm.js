@@ -1,7 +1,7 @@
 /**
  * Application:  jQuery.roboForm
- * Version:      1.1.1
- * Release date: 2015-08-21
+ * Version:      1.1.2
+ * Release date: 2015-08-23
  * Author:       Stepan Maslennikov (http://csscode.ru)
  * Homepage:     https://github.com/StepanMas/jQuery.roboForm
  * License:      MIT
@@ -20,6 +20,7 @@
 
 				// error message
 				mess_noRequired: 'Заполните поле',
+				mess_noRequiredCheck: 'Отметьте поле',
 				mess_noEmail: 'Укажите почту правильно',
 				mess_noPhone: 'Укажите номер правильно',
 				mess_noPattern: 'Заполните поле правильно',
@@ -65,6 +66,9 @@
 				// валидируем
 				if (hasRules('required', rules) && value === '')
 					isValid = exceptionError(_this, cnf.mess_noRequired)
+
+				if (_this.is(':checkbox, :radio') && hasRules('required', rules) && !_this.is(':checked'))
+					isValid = exceptionError(_this, cnf.mess_noRequiredCheck)
 
 				if (hasRules('email', rules) && (hasRules('required', rules) || value !== '')) {
 
@@ -149,7 +153,9 @@
 				})
 			}
 
-			if ($(this).data('ajax')) {
+			isValid = $._roboFormRules(form, cnf)
+
+			if (isValid && $(this).data('ajax')) {
 
 				$.ajax({
 					type: $(this).attr('method') || 'POST',
@@ -207,6 +213,7 @@
 				return false;
 			}
 
+			return isValid;
 		})
 
 		doc.on('click', cnf.errorElement, function () {
@@ -260,6 +267,12 @@
 					return false;
 			}
 
+	}
+
+	$._roboFormRules = function(){return true};
+	$.roboFormAddRule = function(rule){
+		$._roboFormRules = rule
+		return this;
 	}
 
 })(jQuery);
