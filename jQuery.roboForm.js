@@ -124,8 +124,10 @@
 						var orFlag = false;
 
 						$.each(range, function(i, val){
-							if (val == value.length)
+							if (val == value.length){
 								orFlag = true
+								return false;
+							}
 						})
 
 						if(!orFlag)
