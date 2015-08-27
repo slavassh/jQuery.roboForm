@@ -1,7 +1,7 @@
 /**
  * Application:  jQuery.roboForm
- * Version:      1.1.2
- * Release date: 2015-08-23
+ * Version:      1.1.3
+ * Release date: 2015-08-27
  * Author:       Stepan Maslennikov (http://csscode.ru)
  * Homepage:     https://github.com/StepanMas/jQuery.roboForm
  * License:      MIT
@@ -117,6 +117,19 @@
 						if(value.length < parseInt(range[0]) || value.length > parseInt(range[1]))
 							isValid = exceptionError(_this, cnf.mess_range.replace('$1', _this.data('range')))
 
+					}
+					else if(range.indexOf('|') !== -1){
+
+						range = range.split('|')
+						var orFlag = false;
+
+						$.each(range, function(i, val){
+							if (val == value.length)
+								orFlag = true
+						})
+
+						if(!orFlag)
+							isValid = exceptionError(_this, cnf.mess_range.replace('$1', _this.data('range')))
 					}
 					else{
 

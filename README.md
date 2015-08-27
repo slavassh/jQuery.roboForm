@@ -1,7 +1,7 @@
 jQuery.roboForm
 ============
 
-Автоматизатор форм. Проверка валидности и связь с сервером
+The programmer forms. Check validity and the connection to the server.
 
 	$.roboForm()
 	
