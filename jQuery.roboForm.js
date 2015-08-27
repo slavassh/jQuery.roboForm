@@ -1,6 +1,6 @@
 /**
  * Application:  jQuery.roboForm
- * Version:      1.1.3
+ * Version:      1.1.4
  * Release date: 2015-08-27
  * Author:       Stepan Maslennikov (http://csscode.ru)
  * Homepage:     https://github.com/StepanMas/jQuery.roboForm
@@ -161,14 +161,13 @@
 
 				return false;
 			}
-			else
-			{
+
+			isValid = $._roboFormRules(form, cnf)
+
+			if(isValid)
 				form.trigger({
 					type: 'roboForm.valid.true'
 				})
-			}
-
-			isValid = $._roboFormRules(form, cnf)
 
 			if (isValid && $(this).data('ajax')) {
 
