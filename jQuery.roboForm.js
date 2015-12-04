@@ -1,7 +1,7 @@
 /**
  * Application:  jQuery.roboForm
- * Version:      1.1.4
- * Release date: 2015-08-27
+ * Version:      1.1.5
+ * Release date: 2015-12-04
  * Author:       Stepan Maslennikov (http://csscode.ru)
  * Homepage:     https://github.com/StepanMas/jQuery.roboForm
  * License:      MIT
@@ -169,7 +169,7 @@
 					type: 'roboForm.valid.true'
 				})
 
-			if (isValid && $(this).data('ajax')) {
+			if (isValid && $(this).data('ajax') && !$(this).prop('disabled') && !$(this).hasClass('disabled')) {
 
 				$.ajax({
 					type: $(this).attr('method') || 'POST',
