@@ -1,14 +1,12 @@
 {
   "name": "jQuery.roboForm",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "author": "Stepan Maslennikov",
-  "authorPage": "http://csscode.ru",
+  "authorPage": "https://github.com/stepanmas/",
   "license": "MIT",
   "devDependencies": {
     "grunt": "~0.4.1",
-    "grunt-contrib-concat": "~0.5.0",
     "grunt-contrib-uglify": "~0.7.0",
-    "grunt-contrib-imagemin": "~0.9.2",
     "grunt-contrib-watch": "~0.6.1"
   }
 }

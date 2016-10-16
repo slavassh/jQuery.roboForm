@@ -15,26 +15,17 @@ module.exports = function (grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 
-		concat: {
-			options: options,
-			dist: {
-				src: [
-					'../<%= pkg.name %>.dev.js'
-				],
-				dest: '../<%= pkg.name %>.js'
-			}
-		},
 		uglify: {
 			options: options,
 			build: {
-				src: '../<%= pkg.name %>.js',
-				dest: '../<%= pkg.name %>.min.js'
+				src: '<%= pkg.name %>.js',
+				dest: '<%= pkg.name %>.min.js'
 			}
 		},
 		watch: {
 			scripts: {
-				files: ['../*.js'],
-				tasks: ['concat', 'uglify'],
+				files: ['*.js'],
+				tasks: ['uglify'],
 				options: {
 					spawn: false
 				}
@@ -43,10 +34,9 @@ module.exports = function (grunt) {
 
 	});
 
-	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 
-	grunt.registerTask('default', ['concat', 'uglify', 'watch']);
+	grunt.registerTask('default', ['uglify', 'watch']);
 
 };
